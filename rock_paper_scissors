@@ -1,0 +1,23 @@
+#rock paper scissors game
+
+import random
+choices = ['rock', 'paper', 'scissors']
+winning_combinations = {
+    'rock': 'scissors',
+    'scissors': 'paper',
+    'paper': 'rock'
+}
+player_choice = str(input("Choose rock, paper or scissors (exactly one of the three): ")).strip().lower()
+
+while player_choice not in choices:
+    player_choice = str(input("Invalid choice mate. Choose one of the three (rock, paper, or scissors): ")).strip().lower()
+
+comp_choice = random.choice(choices)
+if comp_choice == player_choice:
+    print('Draw!')
+elif winning_combinations[player_choice] == comp_choice:
+    print(f'You won! I chose {comp_choice}.')
+else:
+    print('I won! I chose ', comp_choice)
+
+
